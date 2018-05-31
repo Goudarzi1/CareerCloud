@@ -10,7 +10,7 @@ namespace CareerCloud.Pocos
 {
 
     [Table("Company_Locations")]
-    public class CompanyLocationPoco
+    public class CompanyLocationPoco : IPoco
     {
         [Key]
 

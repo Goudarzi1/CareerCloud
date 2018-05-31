@@ -11,7 +11,7 @@ namespace CareerCloud.Pocos
 {
 
     [Table("Applicant_Educations")]
-    public class ApplicantEducationPoco
+    public class ApplicantEducationPoco : IPoco
     {
         [Key]
 

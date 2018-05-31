@@ -11,7 +11,7 @@ namespace CareerCloud.Pocos
 {
 
     [Table("Security_Logins")]
-    public class SecurityLoginPoco
+    public class SecurityLoginPoco : IPoco
     {
         [Key]
 
