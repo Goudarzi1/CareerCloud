@@ -43,6 +43,7 @@ namespace CareerCloud.ADODataAccessLayer
         {
             // throw new NotImplementedException();
             //throw new NotImplementedException();
+            SqlConnection _Connection = new SqlConnection(_ConnString);
             using (_Connection)
             {
                 SqlCommand cmd = new SqlCommand();

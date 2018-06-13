@@ -15,6 +15,7 @@ namespace CareerCloud.ADODataAccessLayer
         public void Add(params ApplicantEducationPoco[] items)
         {
             //throw new NotImplementedException();
+            SqlConnection _Connection = new SqlConnection(_ConnString);
             using (_Connection)
             {
                 SqlCommand cmd = new SqlCommand();
@@ -24,7 +25,7 @@ namespace CareerCloud.ADODataAccessLayer
                 {
                     cmd.CommandText = @"INSERT INTO Applicant_Educations
                            (Id, Applicant, Major, Certificate_Diploma, Start_Date, Completion_Date, Completion_Percent)
-                           valyes (@Id, @Applicant, @Major, @Certificate_Diploma, @Start_Date, @Completion_Date, @Completion_Percent)";
+                           values (@Id, @Applicant, @Major, @Certificate_Diploma, @Start_Date, @Completion_Date, @Completion_Percent)";
 
                     cmd.Parameters.AddWithValue("@Id", poco.Id);
                     cmd.Parameters.AddWithValue("@Applicant", poco.Applicant);
@@ -50,6 +51,7 @@ namespace CareerCloud.ADODataAccessLayer
         {
             //throw new NotImplementedException();
             ApplicantEducationPoco[] pocos = new ApplicantEducationPoco[1000];
+            SqlConnection _Connection = new SqlConnection(_ConnString);
             using (_Connection)
             {
                 SqlCommand cmd = new SqlCommand();
@@ -96,6 +98,7 @@ namespace CareerCloud.ADODataAccessLayer
         public void Remove(params ApplicantEducationPoco[] items)
         {
             //throw new NotImplementedException();
+            SqlConnection _Connection = new SqlConnection(_ConnString);
             using (_Connection)
             {
                 SqlCommand cmd = new SqlCommand();
@@ -114,10 +117,12 @@ namespace CareerCloud.ADODataAccessLayer
         public void Update(params ApplicantEducationPoco[] items)
         {
             //throw new NotImplementedException();
+            SqlConnection _Connection = new SqlConnection(_ConnString);
             using (_Connection)
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = _Connection;
+                
                 foreach (ApplicantEducationPoco poco in items)
                 {
                     cmd.CommandText = @"Update Applicant_Educations 
@@ -126,8 +131,8 @@ namespace CareerCloud.ADODataAccessLayer
                                             Certificate_Diploma=@Certificate_Diploma, 
                                             Start_Date=@Start_Date, 
                                             Completion_Date=@Completion_Date,
-                                            Completion_Percent=@Completion_Percent, 
-                                            Time_Stamp=@Time_Stamp
+                                            Completion_Percent=@Completion_Percent
+                                            --Time_Stamp=@Time_Stamp
                                         Where Id=@Id ";
 
                     cmd.Parameters.AddWithValue("@Applicant", poco.Applicant);
@@ -136,6 +141,7 @@ namespace CareerCloud.ADODataAccessLayer
                     cmd.Parameters.AddWithValue("@Start_Date", poco.StartDate);
                     cmd.Parameters.AddWithValue("@Completion_Date", poco.CompletionDate);
                     cmd.Parameters.AddWithValue("@Completion_Percent", poco.CompletionPercent);
+                   //cmd.Parameters.AddWithValue("@Time_Stamp", poco.TimeStamp);
                     cmd.Parameters.AddWithValue("@Id", poco.Id);
 
                     _Connection.Open();
