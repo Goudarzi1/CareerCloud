@@ -56,8 +56,8 @@
     <Compile Include="CompanyLocationRepository.cs" />
     <Compile Include="CompanyProfileRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SecurityLoginRepository.cs" />
     <Compile Include="SecurityLoginsLogRepository.cs" />
+    <Compile Include="SecurityLoginsRepository.cs" />
     <Compile Include="SecurityLoginsRoleRepository.cs" />
     <Compile Include="SecurityRoleRepository.cs" />
     <Compile Include="SystemCountryCodeRepository.cs" />

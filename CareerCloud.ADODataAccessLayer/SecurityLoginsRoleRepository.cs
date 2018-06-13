@@ -45,5 +45,15 @@ namespace CareerCloud.ADODataAccessLayer
         {
             throw new NotImplementedException();
         }
+
+        public void Add(SecurityLoginsRolePoco[] securityLoginsRolePoco)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Remove(SecurityLoginsRolePoco[] securityLoginsRolePoco)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

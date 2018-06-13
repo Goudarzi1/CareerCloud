@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace CareerCloud.ADODataAccessLayer
 {
-    public class ApplicantSkillRepository : BaseADO, IDataRepository<SecurityRolePoco>
+    public class ApplicantSkillRepository : BaseADO, IDataRepository<ApplicantSkillPoco>
     {
-        public void Add(params SecurityRolePoco[] items)
+        public void Add(params ApplicantSkillPoco[] items)
         {
             throw new NotImplementedException();
         }
@@ -21,27 +21,27 @@ namespace CareerCloud.ADODataAccessLayer
             throw new NotImplementedException();
         }
 
-        public IList<SecurityRolePoco> GetAll(params Expression<Func<SecurityRolePoco, object>>[] navigationProperties)
+        public IList<ApplicantSkillPoco> GetAll(params Expression<Func<ApplicantSkillPoco, object>>[] navigationProperties)
         {
             throw new NotImplementedException();
         }
 
-        public IList<SecurityRolePoco> GetList(Expression<Func<SecurityRolePoco, bool>> where, params Expression<Func<SecurityRolePoco, object>>[] navigationProperties)
+        public IList<ApplicantSkillPoco> GetList(Expression<Func<ApplicantSkillPoco, bool>> where, params Expression<Func<ApplicantSkillPoco, object>>[] navigationProperties)
         {
             throw new NotImplementedException();
         }
 
-        public SecurityRolePoco GetSingle(Expression<Func<SecurityRolePoco, bool>> where, params Expression<Func<SecurityRolePoco, object>>[] navigationProperties)
+        public ApplicantSkillPoco GetSingle(Expression<Func<ApplicantSkillPoco, bool>> where, params Expression<Func<ApplicantSkillPoco, object>>[] navigationProperties)
         {
             throw new NotImplementedException();
         }
 
-        public void Remove(params SecurityRolePoco[] items)
+        public void Remove(params ApplicantSkillPoco[] items)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(params SecurityRolePoco[] items)
+        public void Update(params ApplicantSkillPoco[] items)
         {
             throw new NotImplementedException();
         }

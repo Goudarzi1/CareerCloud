@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CareerCloud.ADODataAccessLayer
 {
-    class SecurityLoginsLogRepository : BaseADO, IDataRepository<SecurityLoginsLogPoco>
+    class SecurityLoginLogRepository : BaseADO, IDataRepository<SecurityLoginsLogPoco>
     {
         public void Add(params SecurityLoginsLogPoco[] items)
         {
@@ -45,5 +45,7 @@ namespace CareerCloud.ADODataAccessLayer
         {
             throw new NotImplementedException();
         }
+
+
     }
 }
