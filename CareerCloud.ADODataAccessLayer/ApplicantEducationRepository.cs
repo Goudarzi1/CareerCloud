@@ -15,11 +15,11 @@ namespace CareerCloud.ADODataAccessLayer
         public void Add(params ApplicantEducationPoco[] items)
         {
             //throw new NotImplementedException();
-            SqlConnection _Connection = new SqlConnection(_ConnString);
-            using (_Connection)
+            SqlConnection Connection = new SqlConnection(_ConnString);
+            using (Connection)
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.Connection = _Connection;
+                cmd.Connection = Connection;
                 int rowsEffected = 0;
                 foreach (ApplicantEducationPoco poco in items)
                 {
@@ -35,9 +35,9 @@ namespace CareerCloud.ADODataAccessLayer
                     cmd.Parameters.AddWithValue("@Completion_Date", poco.CompletionDate);
                     cmd.Parameters.AddWithValue("@Completion_Percent", poco.CompletionPercent);
 
-                    _Connection.Open();
+                    Connection.Open();
                     rowsEffected += cmd.ExecuteNonQuery();
-                    _Connection.Close();
+                    Connection.Close();
                 }
             }
         }
@@ -51,13 +51,13 @@ namespace CareerCloud.ADODataAccessLayer
         {
             //throw new NotImplementedException();
             ApplicantEducationPoco[] pocos = new ApplicantEducationPoco[1000];
-            SqlConnection _Connection = new SqlConnection(_ConnString);
-            using (_Connection)
+            SqlConnection Connection = new SqlConnection(_ConnString);
+            using (Connection)
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.Connection = _Connection;
+                cmd.Connection = Connection;
                 cmd.CommandText = "Select * from Applicant_Educations";
-                _Connection.Open();
+                Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
 
 
@@ -77,7 +77,7 @@ namespace CareerCloud.ADODataAccessLayer
                     pocos[position] = poco;
                     position++;
                 }
-                _Connection.Close();
+                Connection.Close();
             }
             return pocos.Where(p => p != null).ToList();
             
@@ -98,18 +98,18 @@ namespace CareerCloud.ADODataAccessLayer
         public void Remove(params ApplicantEducationPoco[] items)
         {
             //throw new NotImplementedException();
-            SqlConnection _Connection = new SqlConnection(_ConnString);
-            using (_Connection)
+            SqlConnection Connection = new SqlConnection(_ConnString);
+            using (Connection)
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.Connection = _Connection;
+                cmd.Connection = Connection;
                 foreach (ApplicantEducationPoco poco in items)
                 {
                     cmd.CommandText = @"Delete from Applicant_Educations Where Id=@Id ";
                     cmd.Parameters.AddWithValue("@Id", poco.Id);
-                    _Connection.Open();
+                    Connection.Open();
                     cmd.ExecuteNonQuery();
-                    _Connection.Close();
+                    Connection.Close();
                 }
             }
         }
@@ -117,11 +117,11 @@ namespace CareerCloud.ADODataAccessLayer
         public void Update(params ApplicantEducationPoco[] items)
         {
             //throw new NotImplementedException();
-            SqlConnection _Connection = new SqlConnection(_ConnString);
-            using (_Connection)
+            SqlConnection Connection = new SqlConnection(_ConnString);
+            using (Connection)
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.Connection = _Connection;
+                cmd.Connection = Connection;
                 
                 foreach (ApplicantEducationPoco poco in items)
                 {
@@ -144,9 +144,9 @@ namespace CareerCloud.ADODataAccessLayer
                    //cmd.Parameters.AddWithValue("@Time_Stamp", poco.TimeStamp);
                     cmd.Parameters.AddWithValue("@Id", poco.Id);
 
-                    _Connection.Open();
+                    Connection.Open();
                     cmd.ExecuteNonQuery();
-                    _Connection.Close();
+                    Connection.Close();
                 }
             }
         }
