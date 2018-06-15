@@ -15,7 +15,7 @@ namespace CareerCloud.ADODataAccessLayer
 
        public BaseADO()
         {
-            _ConnString = ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString;
+            _ConnString = ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString;
             
             
         }

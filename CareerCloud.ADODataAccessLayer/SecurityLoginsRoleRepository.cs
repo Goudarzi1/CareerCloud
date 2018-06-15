@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace CareerCloud.ADODataAccessLayer
 {
-    public class SecurityLoginsRoleRepository : BaseADO, IDataRepository<SecurityLoginPoco>
+    public class SecurityLoginsRoleRepository : BaseADO, IDataRepository<SecurityLoginsRolePoco>
     {
-        public void Add(params SecurityLoginPoco[] items)
+        public void Add(params SecurityLoginsRolePoco[] items)
         {
             throw new NotImplementedException();
         }
@@ -21,37 +21,27 @@ namespace CareerCloud.ADODataAccessLayer
             throw new NotImplementedException();
         }
 
-        public IList<SecurityLoginPoco> GetAll(params Expression<Func<SecurityLoginPoco, object>>[] navigationProperties)
+        public IList<SecurityLoginsRolePoco> GetAll(params Expression<Func<SecurityLoginsRolePoco, object>>[] navigationProperties)
         {
             throw new NotImplementedException();
         }
 
-        public IList<SecurityLoginPoco> GetList(Expression<Func<SecurityLoginPoco, bool>> where, params Expression<Func<SecurityLoginPoco, object>>[] navigationProperties)
+        public IList<SecurityLoginsRolePoco> GetList(Expression<Func<SecurityLoginsRolePoco, bool>> where, params Expression<Func<SecurityLoginsRolePoco, object>>[] navigationProperties)
         {
             throw new NotImplementedException();
         }
 
-        public SecurityLoginPoco GetSingle(Expression<Func<SecurityLoginPoco, bool>> where, params Expression<Func<SecurityLoginPoco, object>>[] navigationProperties)
+        public SecurityLoginsRolePoco GetSingle(Expression<Func<SecurityLoginsRolePoco, bool>> where, params Expression<Func<SecurityLoginsRolePoco, object>>[] navigationProperties)
         {
             throw new NotImplementedException();
         }
 
-        public void Remove(params SecurityLoginPoco[] items)
+        public void Remove(params SecurityLoginsRolePoco[] items)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(params SecurityLoginPoco[] items)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Add(SecurityLoginsRolePoco[] securityLoginsRolePoco)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Remove(SecurityLoginsRolePoco[] securityLoginsRolePoco)
+        public void Update(params SecurityLoginsRolePoco[] items)
         {
             throw new NotImplementedException();
         }
